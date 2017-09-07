@@ -52,14 +52,14 @@ var commands = {
                     console.log(`URL: \t${song.preview_url}`);
                 }
             }else{
-                console.log('Looks like there was an erorr! ' + err);
+                console.log(err);
             }
         });
     },
 
     'movie-this': function() {
         if(!query_value) {
-            query_value = 'Mr. Nobody';
+            query_value = 'The Matrix';
         }
         let url = `http://www.omdbapi.com/?t=${query_value}&plot=short&apikey=${process.env.OMDB_API_KEY}`;
         request(url, function(err, res, movie) {
